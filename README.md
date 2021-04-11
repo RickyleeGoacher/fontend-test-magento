@@ -14,7 +14,7 @@ Copy the contents
 
 In Admin go to Content>Pages>Homepage>content
 
-Paste the contents of homepage.hmtl
+Paste the contents of homepage.html
 
 ### Banner Widget setup
 
