@@ -1,0 +1,8 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Banner_Widget:etc/widget.xsd">
+    <widget class="ExampleCorp\Learning\Block\Widget\Test" id="banner_widget">
+        <label>My New Widget</label>
+        <description>This is a test widget!!!</description>
+
+    </widget>
+</widgets>

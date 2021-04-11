@@ -1,0 +1,158 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    main {
+        width: 85%;
+        margin: 0 auto;
+
+        h2 {
+            text-align: center;
+        }
+
+        section {
+            width: 100%;
+
+            .main-image {
+                max-width: 100%;
+                position: relative;
+
+                img {
+                    max-width: 100%;
+                    min-height: 100%;
+                }
+            }
+
+            .image-container {
+                max-width: 100%;
+
+                .image-wrapper {
+                    max-width: 100%;
+                    position: relative;
+                    overflow-y: hidden;
+
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        min-width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: rgb(8,8,8);
+        background: linear-gradient(0deg, rgba(8,8,8,0.7150210425967262) 0%, rgba(8,8,8,0.08476894175639005) 35%);
+
+        .text {
+            min-height: 100px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            bottom: 0;
+            padding: 0 20px;
+
+            span {
+                color: white;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+/*Mobile only styles*/
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    main {
+        section {
+            .main-image {
+                margin-top: 1rem;
+            }
+
+            .image-container {
+                .image-wrapper {
+                    height: 200px;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+/*Desktop only styles*/
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+
+        .main-image {
+            margin: 0;
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.02);
+
+                .text {
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+
+            .image-wrapper {
+                cursor: pointer;
+                transition: transform .3s;
+
+                img {
+                    width: 100%;
+                }
+
+                &:hover {
+                    transform: scale(1.02);
+
+                    .text {
+                        span {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sectionTwo {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+
+        .image-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 20px;
+            grid-row-gap: 0px;
+        }
+    }
+}

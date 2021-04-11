@@ -1,0 +1,92 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    min-height: 400px;
+                }
+
+                .text-container {
+                    width: 100%;
+                    min-height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: @secondary-colour;
+
+                    h1 {
+                        color: white;
+                    }
+
+                    button {
+                        min-width: 100px;
+                        min-height: 50px;
+                        border: 0;
+                        background-color: white;
+                        border-radius: 4px;
+                        color: @secondary-colour;
+                        cursor: pointer;
+                        transition-duration: 0.5s;
+
+                        &:hover {
+                            opacity: 0.9;
+                            border: solid 1px @secondary-colour;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*Styles for tablet > Desktop*/
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                .text-container {
+                    position: absolute;
+                    align-items: flex-start;
+                    width: 500px;
+                    bottom: 50px;
+                    left: 100px;
+
+                    h1 {
+                        margin-left: 2rem;
+                    }
+
+                    button {
+                        margin-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Mobile specific styles*/
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                .text-container {
+                    width: 100%;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+

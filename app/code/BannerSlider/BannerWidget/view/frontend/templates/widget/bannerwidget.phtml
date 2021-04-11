@@ -1,0 +1,59 @@
+<?php
+
+?>
+
+<!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+<?php
+echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home-page-slider')->toHtml();
+?>
+
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
+
+
+ <script>
+require(['jquery', 'swiper-slider', 'domReady!',], function($, Swiper){
+
+
+      var swiper = new Swiper('.swiper-container', {
+
+      autoplay: 2500,
+
+      slidesPerView: 1,
+
+      slidesPerView: 'auto',
+
+      spaceBetween: 30,
+
+      effect: 'fade',
+
+      pagination: {
+
+        el: '.swiper-pagination',
+
+        clickable: true,
+
+      },
+
+      navigation: {
+
+        nextEl: '.swiper-button-next',
+
+        prevEl: '.swiper-button-prev',
+
+      },
+
+    });
+ });
+</script>
